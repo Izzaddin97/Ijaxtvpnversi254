@@ -2,11 +2,10 @@ run = "replkit dev"
 entrypoint = "src/tool/main.tsx"
 
 hidden = [".config", ".git", ".gitignore", "tsconfig.json"]
-modules = ["nodejs-20", "python-3.11", "hermit-0.38.2", "python-3.8"]
+modules = ["nodejs-20"]
 
 [nix]
 channel = "stable-21_11"
-packages = ["timetrap", "linuxPackages_xanmod.intel-speed-select"]
 
 [env]
 PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"

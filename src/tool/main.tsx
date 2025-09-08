@@ -1,7 +1,11 @@
+import * as React from "react";
+import { render } from "react-dom";
+import { useReplit } from "@replit/extensions-react";
 
-  import { createRoot } from "react-dom/client";
-  import App from "./App";
-  import "./index.css";
+function Component() {
+  const { replit } = useReplit();
 
-  createRoot(document.getElementById("root")!).render(<App />);
-  
+  return <div>Replit Extension</div>;
+}
+
+render(<Component />, document.getElementById("root") as Element);
