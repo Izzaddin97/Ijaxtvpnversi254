@@ -4,16 +4,17 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  root: 'src/tool',
+  root: '.',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './attached_assets'),
     },
   },
   build: {
     target: 'esnext',
-    outDir: '../../dist',
+    outDir: 'dist',
   },
   server: {
     host: '0.0.0.0',
