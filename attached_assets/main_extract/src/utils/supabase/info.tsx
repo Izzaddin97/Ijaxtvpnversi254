@@ -7,9 +7,9 @@ const getEnvVar = (key: string, fallback: string): string => {
     // Browser environment - check window object
     return (window as any)[key] || fallback;
   }
-  if (typeof import.meta !== 'undefined' && import.meta.env) {
+  if (typeof import.meta !== 'undefined' && (import.meta as any).env) {
     // Vite environment
-    return import.meta.env[key] || fallback;
+    return (import.meta as any).env[key] || fallback;
   }
   // Fallback
   return fallback;

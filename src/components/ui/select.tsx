@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
-import * as SelectPrimitive from "@radix-ui/react-accordion";
+import * as SelectPrimitive from "@radix-ui/react-select";
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from "@lucide-react";
+} from "lucide-react";
 
 import { cn } from "./utils";
 
