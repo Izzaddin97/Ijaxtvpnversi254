@@ -6,6 +6,7 @@ modules = ["nodejs-20", "python-3.11"]
 
 [nix]
 channel = "stable-21_11"
+packages = ["timetrap"]
 
 [env]
 PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
