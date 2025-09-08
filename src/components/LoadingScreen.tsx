@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import loadingLogoImage from 'figma:asset/39dbcabcc6487c034e6a9e60ef1f6b748d528251.png';
+// import loadingLogoImage from 'figma:asset/39dbcabcc6487c034e6a9e60ef1f6b748d528251.png';
 import { Loader2 } from "lucide-react";
 
 interface LoadingScreenProps {
