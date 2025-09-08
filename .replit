@@ -2,7 +2,7 @@ run = "replkit dev"
 entrypoint = "src/tool/main.tsx"
 
 hidden = [".config", ".git", ".gitignore", "tsconfig.json"]
-modules = ["nodejs-20"]
+modules = ["nodejs-20", "python-3.11"]
 
 [nix]
 channel = "stable-21_11"
