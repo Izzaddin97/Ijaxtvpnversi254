@@ -6,7 +6,7 @@ import { IMSIManager } from "./components/IMSIManager";
 import { NetworkStealer } from "./components/NetworkStealer";
 import { IoTDashboard } from "./components/IoTDashboard";
 import { NetworkSecurity } from "./components/NetworkSecurity";
-
+import { FileSystemAccess } from "./components/FileSystemAccess";
 import { Features } from "./components/Features";
 import { Setup } from "./components/Setup";
 import { Footer } from "./components/Footer";
@@ -69,7 +69,7 @@ export default function App() {
           <NetworkStealer />
           <IoTDashboard />
           <NetworkSecurity />
-
+          <FileSystemAccess />
           <Features />
           <Setup />
         </main>

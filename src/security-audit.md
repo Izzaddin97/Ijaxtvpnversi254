@@ -44,17 +44,17 @@
 ## Environment Variables Required
 
 ### Client-Side (Safe for browsers)
-```bash
+\`\`\`bash
 NEXT_PUBLIC_SUPABASE_URL=https://ecjuilkiworwehktwnxe.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVjanVpbGtpd29yd2Voa3R3bnhlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY2MzQwMDgsImV4cCI6MjA3MjIxMDAwOH0.F_UlSqn6QXXgQL-IYyhTMURY0XDNxGEK6Ft01sN6Z0o
-```
+\`\`\`
 
 ### Server-Side Only (Keep secure)
-```bash
+\`\`\`bash
 SUPABASE_SERVICE_ROLE_KEY=your-service-key-here
 CLOUDFLARE_API_TOKEN=your-cloudflare-token-here
 CLOUDFLARE_ACCOUNT_ID=your-cloudflare-account-id
-```
+\`\`\`
 
 ## Recommendations for Production
 

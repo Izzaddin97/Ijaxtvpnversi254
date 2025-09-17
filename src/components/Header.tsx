@@ -1,8 +1,7 @@
 import { Button } from "./ui/button";
 import { Menu, Shield, X, Database, Bot, Sparkles } from "lucide-react";
 import { useState } from "react";
-// Using a placeholder logo for now
-const newLogoImage = "https://via.placeholder.com/40x40/00ff66/000000?text=IV";
+import newLogoImage from 'figma:asset/3a38e1d7fbacdeadb73c05ce4884be639290250c.png';
 
 interface HeaderProps {
   onToggleAI?: () => void;
@@ -16,7 +15,7 @@ export function Header({ onToggleAI }: HeaderProps) {
     { name: "Features", href: "#features" },
     { name: "VPN Plans", href: "#vpn-versions" },
     { name: "Security", href: "#network-security" },
-
+    { name: "File System", href: "#file-system" },
     { name: "Support", href: "#setup" }
   ];
 

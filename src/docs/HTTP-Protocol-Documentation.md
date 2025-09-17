@@ -79,7 +79,7 @@ This document contains the comprehensive HTTP Protocol Infrastructure specificat
 ### VPN Management APIs
 
 #### VPN Connection API
-```
+\`\`\`
 POST /api/v1/vpn/connect
 Parameters:
 - server_id (string, required): Target VPN server identifier
@@ -94,10 +94,10 @@ Response Example:
   "protocol": "OpenVPN",
   "encryption": "AES-256-GCM"
 }
-```
+\`\`\`
 
 #### VPN Disconnection API
-```
+\`\`\`
 POST /api/v1/vpn/disconnect
 Parameters: None
 
@@ -110,10 +110,10 @@ Response Example:
     "downloaded": "2.3GB"
   }
 }
-```
+\`\`\`
 
 #### VPN Status API
-```
+\`\`\`
 GET /api/v1/vpn/status
 Parameters: None
 
@@ -129,12 +129,12 @@ Response Example:
     "downloaded": "2.3GB"
   }
 }
-```
+\`\`\`
 
 ### IMSI Management APIs
 
 #### IMSI Generation API
-```
+\`\`\`
 POST /api/v1/imsi/generate
 Parameters:
 - mcc (string, optional): Mobile Country Code
@@ -149,10 +149,10 @@ Response Example:
   "operator": "T-Mobile USA",
   "expires_at": "2024-12-31T23:59:59Z"
 }
-```
+\`\`\`
 
 #### IMSI Rotation API
-```
+\`\`\`
 PUT /api/v1/imsi/rotate
 Parameters:
 - auto (boolean, optional): Enable automatic rotation
@@ -165,12 +165,12 @@ Response Example:
   "rotated_at": "2024-09-07T12:00:00Z",
   "next_rotation": "2024-09-07T18:00:00Z"
 }
-```
+\`\`\`
 
 ### Security Management APIs
 
 #### Security Scan API
-```
+\`\`\`
 POST /api/v1/security/scan
 Parameters:
 - scan_type (string, required): vulnerability, port, malware, full
@@ -185,12 +185,12 @@ Response Example:
   "status": "clean",
   "recommendations": []
 }
-```
+\`\`\`
 
 ### IoT Device Management APIs
 
 #### IoT Device Discovery API
-```
+\`\`\`
 GET /api/v1/iot/devices
 Parameters:
 - status (string, optional): online, offline, vulnerable
@@ -211,12 +211,12 @@ Response Example:
   "total_devices": 5,
   "protected_devices": 5
 }
-```
+\`\`\`
 
 ### Network Optimization APIs
 
 #### Network Optimization API
-```
+\`\`\`
 POST /api/v1/network/optimize
 Parameters:
 - optimization_type (string, required): speed, security, stealth
@@ -231,7 +231,7 @@ Response Example:
   "applied_at": "2024-09-07T12:00:00Z",
   "duration": "3600s"
 }
-```
+\`\`\`
 
 ---
 
@@ -240,7 +240,7 @@ Response Example:
 ### VPN Management CLI Commands
 
 #### VPN Connection Commands
-```bash
+\`\`\`bash
 # Connect to VPN server
 ijaxt vpn connect --server us-east-1 --protocol openvpn --encryption aes-256
 
@@ -252,10 +252,10 @@ ijaxt vpn status --verbose
 
 # List available servers
 ijaxt vpn list --region us --sort speed
-```
+\`\`\`
 
 #### Expected Output Examples
-```
+\`\`\`
 $ ijaxt vpn connect --server us-east-1
 ✓ Connecting to VPN server...
 ✓ Establishing secure tunnel...
@@ -264,12 +264,12 @@ $ ijaxt vpn connect --server us-east-1
 ✓ Encryption: AES-256-GCM
 ✓ Protocol: OpenVPN
 ✓ Connection established successfully!
-```
+\`\`\`
 
 ### IMSI Management CLI Commands
 
 #### IMSI Identity Commands
-```bash
+\`\`\`bash
 # Generate new IMSI
 ijaxt imsi generate --mcc 310 --mnc 260
 
@@ -278,10 +278,10 @@ ijaxt imsi rotate --auto --interval 300
 
 # Check IMSI pool status
 ijaxt imsi pool --size 100 --refresh
-```
+\`\`\`
 
 #### Expected Output Examples
-```
+\`\`\`
 $ ijaxt imsi generate
 ✓ Generating new IMSI...
 ✓ IMSI: 310260987654321
@@ -289,12 +289,12 @@ $ ijaxt imsi generate
 ✓ MNC: 260 (T-Mobile USA)
 ✓ Valid until: 2024-12-31 23:59:59 UTC
 ✓ IMSI generated successfully!
-```
+\`\`\`
 
 ### Security Management CLI Commands
 
 #### Security Operations
-```bash
+\`\`\`bash
 # Perform security scan
 ijaxt security scan --type full --output json
 
@@ -303,12 +303,12 @@ ijaxt security monitor --realtime --alerts
 
 # Generate security report
 ijaxt security report --start-date 2024-09-01 --end-date 2024-09-07
-```
+\`\`\`
 
 ### IoT Device Management CLI Commands
 
 #### IoT Security Commands
-```bash
+\`\`\`bash
 # Scan for IoT devices
 ijaxt iot scan --network 192.168.1.0/24
 
@@ -317,12 +317,12 @@ ijaxt iot secure --device-id all --policy strict
 
 # Monitor IoT network
 ijaxt iot monitor --anomaly-detection --real-time
-```
+\`\`\`
 
 ### Network Optimization CLI Commands
 
 #### Network Performance Commands
-```bash
+\`\`\`bash
 # Optimize network performance
 ijaxt network optimize --mode speed --provider auto
 
@@ -331,7 +331,7 @@ ijaxt network stealer --stealth --duration 3600
 
 # Check network metrics
 ijaxt network metrics --detailed
-```
+\`\`\`
 
 ---
 
@@ -372,7 +372,7 @@ ijaxt network metrics --detailed
 ## 5. Third-Party CLI Tool Integrations
 
 ### cURL Integration
-```bash
+\`\`\`bash
 # VPN API calls with cURL
 curl -X POST https://api.ijaxt.com/v1/vpn/connect \
   -H "Content-Type: application/json" \
@@ -383,10 +383,10 @@ curl -X POST https://api.ijaxt.com/v1/vpn/connect \
 curl -X POST https://api.ijaxt.com/v1/imsi/generate \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -d '{"mcc":"310","mnc":"260"}'
-```
+\`\`\`
 
 ### HTTPie Integration
-```bash
+\`\`\`bash
 # VPN status check with HTTPie
 http GET api.ijaxt.com/v1/vpn/status Authorization:"Bearer YOUR_TOKEN"
 
@@ -394,10 +394,10 @@ http GET api.ijaxt.com/v1/vpn/status Authorization:"Bearer YOUR_TOKEN"
 http POST api.ijaxt.com/v1/network/optimize \
   optimization_type=speed provider=auto \
   Authorization:"Bearer YOUR_TOKEN"
-```
+\`\`\`
 
 ### Postman CLI Integration
-```bash
+\`\`\`bash
 # Run API collection
 postman collection run ijaxt-vpn-collection.json \
   --environment production-env.json
@@ -405,10 +405,10 @@ postman collection run ijaxt-vpn-collection.json \
 # Export API documentation
 postman collection convert openapi ijaxt-api.yaml \
   --output swagger-doc.yaml
-```
+\`\`\`
 
 ### jq Data Processing
-```bash
+\`\`\`bash
 # Process VPN status JSON
 curl api.ijaxt.com/v1/vpn/status | jq '.connection_status'
 
@@ -417,20 +417,20 @@ curl api.ijaxt.com/v1/servers | jq '.[] | select(.region=="us")'
 
 # Extract security scan results
 cat security-scan.json | jq '.threats[] | select(.severity=="high")'
-```
+\`\`\`
 
 ### OpenVPN CLI Integration
-```bash
+\`\`\`bash
 # Connect with OpenVPN client
 openvpn --config ijaxt-us-east-1.ovpn \
   --auth-user-pass credentials.txt
 
 # Generate OpenVPN configuration
 ijaxt vpn config --format openvpn --server us-east-1 > client.ovpn
-```
+\`\`\`
 
 ### WireGuard CLI Integration
-```bash
+\`\`\`bash
 # Start WireGuard tunnel
 wg-quick up ijaxt-wg0
 
@@ -439,7 +439,7 @@ wg genkey | tee private.key | wg pubkey > public.key
 
 # Show WireGuard status
 wg show
-```
+\`\`\`
 
 ---
 

@@ -1,5 +1,5 @@
 import { Shield, Mail, Phone, MapPin, Github, Twitter, Linkedin } from "lucide-react";
-// import newLogoImage from 'figma:asset/3a38e1d7fbacdeadb73c05ce4884be639290250c.png';
+import newLogoImage from 'figma:asset/3a38e1d7fbacdeadb73c05ce4884be639290250c.png';
 
 export function Footer() {
   return (
@@ -9,9 +9,12 @@ export function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm select-none">
-                I
-              </div>
+              <img
+                src={newLogoImage}
+                alt="Ijaxt VPN"
+                className="logo-circular-xs logo-circular-brand-focus"
+                draggable={false}
+              />
               <span className="text-xl fire-text alfa-slab-one-regular">Ijaxt VPN</span>
             </div>
             <p className="text-muted-foreground text-sm">

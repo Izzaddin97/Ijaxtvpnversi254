@@ -27,18 +27,18 @@ The HTTP Protocol Infrastructure sections have been **removed from the public we
 ## 📁 NEW DOCUMENTATION STRUCTURE
 
 ### 1. Documentation Files Created
-```
+\`\`\`
 /docs/
 ├── HTTP-Protocol-Documentation.md    # Complete technical documentation
 ├── API-Code-Reference.md            # Developer code reference
 └── SECURITY-NOTICE.md              # This security notice
-```
+\`\`\`
 
 ### 2. Code Implementation
-```
+\`\`\`
 /utils/
 └── http-protocol-manager.ts         # Core implementation (unchanged)
-```
+\`\`\`
 
 ### 3. Removed Public Files
 - `/components/HTTPProtocolSystem.tsx` → **REMOVED from public interface**
@@ -50,7 +50,7 @@ The HTTP Protocol Infrastructure sections have been **removed from the public we
 ## 🔐 SECURITY IMPLICATIONS
 
 ### Before (Security Risk)
-```
+\`\`\`
 PUBLIC WEBSITE
 ├── Full API endpoint documentation
 ├── Authentication method details
@@ -58,10 +58,10 @@ PUBLIC WEBSITE
 ├── Third-party integration details
 ├── CLI command structures
 └── Internal architecture exposure
-```
+\`\`\`
 
 ### After (Secured)
-```
+\`\`\`
 PUBLIC WEBSITE
 ├── Core VPN functionality only
 ├── User-facing features
@@ -73,7 +73,7 @@ INTERNAL DOCUMENTATION
 ├── API reference materials
 ├── Development guidelines
 └── Security protocols
-```
+\`\`\`
 
 ---
 
@@ -159,7 +159,7 @@ INTERNAL DOCUMENTATION
 5. **Preserved implementation** in utils
 
 ### Files Modified
-```bash
+\`\`\`bash
 Modified: /App.tsx
 - Removed HTTPProtocolSystem import and usage
 - Removed HTTPAPIManager import and usage  
@@ -173,7 +173,7 @@ Created: /docs/API-Code-Reference.md
 Created: /docs/SECURITY-NOTICE.md
 
 Preserved: /utils/http-protocol-manager.ts
-```
+\`\`\`
 
 ---
 

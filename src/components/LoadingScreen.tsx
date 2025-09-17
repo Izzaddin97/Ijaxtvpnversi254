@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import loadingLogoImage from 'figma:asset/39dbcabcc6487c034e6a9e60ef1f6b748d528251.png';
+import loadingLogoImage from 'figma:asset/39dbcabcc6487c034e6a9e60ef1f6b748d528251.png';
 import { Loader2 } from "lucide-react";
 
 interface LoadingScreenProps {
@@ -65,9 +65,12 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         {/* Logo Container with Professional Styling */}
         <div className="mb-8 relative">
           <div className="logo-container logo-loading-screen relative inline-block">
-            <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl select-none">
-              IJAXT
-            </div>
+            <img
+              src={loadingLogoImage}
+              alt="Ijaxt VPN"
+              className="logo-circular-xl logo-circular-optimal select-none"
+              draggable={false}
+            />
             
             {/* Multiple Shadow Layers */}
             <div className="logo-shadow-1"></div>

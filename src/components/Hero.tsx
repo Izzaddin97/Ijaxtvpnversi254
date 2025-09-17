@@ -1,7 +1,6 @@
 import { Button } from "./ui/button";
 import { Shield, Zap, Globe, Lock, Smartphone, Clock, CreditCard } from "lucide-react";
-// Using a placeholder logo for now
-const newLogoImage = "https://via.placeholder.com/120x120/00ff66/000000?text=IJAXT";
+import newLogoImage from 'figma:asset/3a38e1d7fbacdeadb73c05ce4884be639290250c.png';
 
 export function Hero() {
   return (

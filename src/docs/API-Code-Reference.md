@@ -15,7 +15,7 @@ This document serves as a code reference for the HTTP Protocol Manager implement
 ## 1. TypeScript Type Definitions
 
 ### Core Configuration Types
-```typescript
+\`\`\`typescript
 interface HTTPProtocolConfig {
   baseUrl: string;
   apiVersion: string;
@@ -46,10 +46,10 @@ interface APIEndpoint {
   rateLimit?: number;
   authentication: boolean;
 }
-```
+\`\`\`
 
 ### API Parameter Types
-```typescript
+\`\`\`typescript
 interface APIParameter {
   name: string;
   type: 'string' | 'number' | 'boolean' | 'object' | 'array';
@@ -70,10 +70,10 @@ interface APIResponse {
   example: any;
   headers?: Record<string, string>;
 }
-```
+\`\`\`
 
 ### CLI Command Types
-```typescript
+\`\`\`typescript
 interface CLICommand {
   id: string;
   name: string;
@@ -93,14 +93,14 @@ interface CLIParameter {
   shortFlag?: string;
   default?: any;
 }
-```
+\`\`\`
 
 ---
 
 ## 2. HTTP Protocol Manager Class
 
 ### Class Structure
-```typescript
+\`\`\`typescript
 export class HTTPProtocolManager {
   private config: HTTPProtocolConfig;
   private requestHistory: Array<{
@@ -142,10 +142,10 @@ export class HTTPProtocolManager {
   // Core HTTP Request Handler
   private async makeRequest(method: string, path: string, data?: any): Promise<any>
 }
-```
+\`\`\`
 
 ### Implementation Example
-```typescript
+\`\`\`typescript
 async connectVPN(serverId: string, protocol: string = 'openvpn', encryption: string = 'aes-256'): Promise<any> {
   return this.makeRequest('POST', '/api/v1/vpn/connect', {
     server_id: serverId,
@@ -200,14 +200,14 @@ private async makeRequest(method: string, path: string, data?: any): Promise<any
     throw error;
   }
 }
-```
+\`\`\`
 
 ---
 
 ## 3. CLI Manager Class
 
 ### CLI Command Execution
-```typescript
+\`\`\`typescript
 export class CLIManager {
   private commandHistory: Array<{
     id: string;
@@ -271,14 +271,14 @@ export class CLIManager {
     }
   }
 }
-```
+\`\`\`
 
 ---
 
 ## 4. Third-Party Integration Classes
 
 ### Third-Party API Manager
-```typescript
+\`\`\`typescript
 export class ThirdPartyAPIManager {
   private integrations: ThirdPartyIntegration[] = [
     {
@@ -317,10 +317,10 @@ export class ThirdPartyAPIManager {
     });
   }
 }
-```
+\`\`\`
 
 ### Third-Party CLI Manager
-```typescript
+\`\`\`typescript
 export class ThirdPartyCLIManager {
   generateCurlCommand(endpoint: APIEndpoint, baseUrl: string, apiKey?: string): string {
     let command = `curl -X ${endpoint.method}`;
@@ -368,14 +368,14 @@ export class ThirdPartyCLIManager {
     return command;
   }
 }
-```
+\`\`\`
 
 ---
 
 ## 5. Usage Examples
 
 ### Initialize Managers
-```typescript
+\`\`\`typescript
 const config: HTTPProtocolConfig = {
   baseUrl: 'https://api.ijaxt.com',
   apiVersion: 'v1',
@@ -395,10 +395,10 @@ const httpManager = new HTTPProtocolManager(config);
 const cliManager = new CLIManager();
 const thirdPartyAPI = new ThirdPartyAPIManager();
 const thirdPartyCLI = new ThirdPartyCLIManager();
-```
+\`\`\`
 
 ### API Usage Examples
-```typescript
+\`\`\`typescript
 // VPN Operations
 await httpManager.connectVPN('us-east-1', 'openvpn', 'aes-256');
 await httpManager.getVPNStatus();
@@ -419,10 +419,10 @@ await httpManager.secureIoTDevices('all', 'strict');
 // Network Operations
 await httpManager.optimizeNetwork('speed', 'auto');
 await httpManager.enableNetworkStealer(true, 3600);
-```
+\`\`\`
 
 ### CLI Usage Examples
-```typescript
+\`\`\`typescript
 // VPN CLI Commands
 await cliManager.executeVPNCommand('connect', { server: 'us-east-1', protocol: 'openvpn' });
 await cliManager.executeVPNCommand('status', { verbose: true });
@@ -435,10 +435,10 @@ await cliManager.executeIMSICommand('rotate', { auto: true, interval: 300 });
 // Security CLI Commands
 await cliManager.executeSecurityCommand('scan', { type: 'full', output: 'json' });
 await cliManager.executeSecurityCommand('monitor', { realtime: true, alerts: true });
-```
+\`\`\`
 
 ### Third-Party Integration Examples
-```typescript
+\`\`\`typescript
 // Cloudflare API
 await thirdPartyAPI.cloudflareAPI('/zones');
 await thirdPartyAPI.cloudflareAPI('/zones/zone_id/dns_records', 'POST', { name: 'vpn.ijaxt.com' });
@@ -452,14 +452,14 @@ await thirdPartyAPI.virusTotalScan('https://suspicious-url.com', 'url');
 // Generate CLI commands
 const curlCmd = thirdPartyCLI.generateCurlCommand(endpoint, 'https://api.ijaxt.com', 'token');
 const httpieCmd = thirdPartyCLI.generateHTTPieCommand(endpoint, 'https://api.ijaxt.com', 'token');
-```
+\`\`\`
 
 ---
 
 ## 6. Error Handling
 
 ### API Error Handling
-```typescript
+\`\`\`typescript
 try {
   const result = await httpManager.connectVPN('us-east-1');
   console.log('Connected successfully:', result);
@@ -472,10 +472,10 @@ try {
     console.error('Connection failed:', error.message);
   }
 }
-```
+\`\`\`
 
 ### CLI Error Handling
-```typescript
+\`\`\`typescript
 try {
   const output = await cliManager.executeVPNCommand('connect', { server: 'invalid-server' });
   console.log(output);
@@ -488,14 +488,14 @@ try {
   console.log('Exit code:', lastCommand.exitCode);
   console.log('Error output:', lastCommand.output);
 }
-```
+\`\`\`
 
 ---
 
 ## 7. Security Implementation
 
 ### Authentication
-```typescript
+\`\`\`typescript
 // Bearer token authentication
 const config = {
   authentication: {
@@ -511,20 +511,20 @@ const config = {
     apiKey: process.env.IJAXT_API_KEY
   }
 };
-```
+\`\`\`
 
 ### Rate Limiting
-```typescript
+\`\`\`typescript
 const config = {
   rateLimit: {
     requests: 100,    // Maximum requests
     period: 60000     // Time period in milliseconds
   }
 };
-```
+\`\`\`
 
 ### Request Validation
-```typescript
+\`\`\`typescript
 private validateRequest(method: string, path: string, data?: any): void {
   // Validate HTTP method
   const validMethods = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'];
@@ -542,7 +542,7 @@ private validateRequest(method: string, path: string, data?: any): void {
     throw new Error('Request data must be an object');
   }
 }
-```
+\`\`\`
 
 ---
 
