@@ -1,8 +1,8 @@
 "use client"
 
 import { useLanguage } from "../contexts/LanguageContext"
-import { Button } from "./ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage()
